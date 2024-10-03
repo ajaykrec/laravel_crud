@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
+<!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+</head>
+<body>
+<button onclick="JSalert()">Show a prompt alert</button>
+
+<script type="text/javascript">
+function JSalert(){
+	swal({   title: "Require Email!",   
+    text: "Enter your email address:",   
+    type: "input",   
+    showCancelButton: true,   
+    closeOnConfirm: false,   
+    animation: "slide-from-top",   
+    inputPlaceholder: "Your Email address" }, 
+    
+    function(inputValue){   
+        if (inputValue === false) 
+        return false;      
+           if (inputValue === "") {     
+            swal.showInputError("Please enter email!");     
+            return false   
+            }      
+         swal("Action Saved!", "You entered following email: " + inputValue, "success"); });
+}
+</script>
+</body>
+</html> 
